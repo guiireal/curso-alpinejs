@@ -19,26 +19,13 @@
 </head>
 <body>
 <div x-data="{
-  names: ['João', 'Maria', 'Pedro'],
-  name: '',
-  addName() {
-    this.names.push(this.name);
-    this.name = '';
-  },
-  removeName(name) {
-    this.names = this.names.filter((item) => item !== name);
-  }
+
 }">
 
-  <template x-for="(name, index) in names" :key="index">
-    <div>
-      <p x-text="name"></p>
-      <button @click="removeName(name)">Remover</button>
-    </div>
-  </template>
-
-  <input type="text" x-model="name" @keydown.enter="addName">
-  <button @click="addName">Adicionar</button>
+  <form action="">
+    <input type="text">
+    <button type="submit">Enviar</button>
+  </form>
 </div>
 </body>
 </html>
