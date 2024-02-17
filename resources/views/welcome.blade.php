@@ -30,14 +30,14 @@
   }
 }">
 
-  <template x-for="name in names" :key="name">
+  <template x-for="(name, index) in names" :key="index">
     <div>
       <p x-text="name"></p>
       <button @click="removeName(name)">Remover</button>
     </div>
   </template>
 
-  <input type="text" x-model="name">
+  <input type="text" x-model="name" @keydown.enter="addName">
   <button @click="addName">Adicionar</button>
 </div>
 </body>
